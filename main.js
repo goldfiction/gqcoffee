@@ -6,6 +6,8 @@ var fs = require( 'fs' );
 var path=require('path');
 var fsReaddir = require('fs-readdir');
 var async=require('async');
+var requireFromString = require('require-from-string');
+
 
 function load(o,cb){
     var path2= o.path||"coffee";
@@ -40,3 +42,5 @@ function load(o,cb){
 }
 
 exports.load=load;
+
+exports.requireFromString=requireFromString;

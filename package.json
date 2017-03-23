@@ -1,7 +1,7 @@
 {
   "name": "gqcoffee",
-  "version": "1.0.0",
-  "description":"gqcoffee is a smart loading script for loading coffee scripts. all coffee scripts in the given folder will be parsed live and attached to global.coffee",
+  "version": "1.0.1",
+  "description":"gqcoffee is a smart loading script for loading coffee scripts. all coffee scripts in the given folder will be parsed live and attached to global.coffee. checkout test/test.js for examples",
   "repository":"https://github.com/goldfiction/gqcoffee.git",
   "license": "MIT",
   "main":"./main.js",
@@ -11,10 +11,12 @@
   "dependencies":{
     "coffee-script":"1.0.0",
     "fs-readdir":"0.0.3",
-    "async":"1.0.0"
+    "async":"1.0.0",
+    "require-from-string":""
   },
   "private":false,
   "versions":{
+    "1.0.1":"added requireFromString method, see tests",
     "1.0.0":"init"
   }
 }

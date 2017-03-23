@@ -17,4 +17,10 @@ it('should be able to load coffees',function(done){
         assert(b==456);
         done(e);
     });
-})
+});
+
+it('should be able to load modules',function(done){
+    var c=gqcoffee.requireFromString(coffee['test/coffee/requiretest']);
+    assert(c.c==789);
+    done();
+});
