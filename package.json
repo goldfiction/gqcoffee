@@ -1,6 +1,6 @@
 {
   "name": "gqcoffee",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description":"gqcoffee is a smart loading script for loading coffee scripts. all coffee scripts in the given folder will be parsed live and attached to global.coffee. checkout test/test.js for examples",
   "repository":"https://github.com/goldfiction/gqcoffee.git",
   "license": "MIT",
@@ -9,15 +9,17 @@
     "name": "Grant Li"
   },
   "dependencies":{
-    "coffee-script":"1.0.0",
+
     "fs-readdir":"0.0.3",
     "async":"1.0.0",
-    "require-from-string":"",
-    "gqdoq":"",
-    "lodash":"",
-    "grunt":"",
-    "grunt-contrib-coffee":"",
-    "grunt-mocha-test":""
+    "require-from-string":"1.2.1",
+    "gqdoq":"1.0.1",
+    "lodash":"4.0.0"
+  },
+  "extra_dependencies":{
+    "grunt":"1.0.1",
+    "grunt-contrib-coffee":"1.0.0",
+    "grunt-mocha-test":"0.13.2"
   },
   "scripts":{
     "test":"grunt test"
