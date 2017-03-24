@@ -1,10 +1,10 @@
 {
   "name": "gqcoffee",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description":"gqcoffee is a smart loading script for loading coffee scripts. all coffee scripts in the given folder will be parsed live and attached to global.coffee. checkout test/test.js for examples",
   "repository":"https://github.com/goldfiction/gqcoffee.git",
   "license": "MIT",
-  "main":"./lib/main.js",
+  "main":"lib/main.js",
   "author": {
     "name": "Grant Li"
   },

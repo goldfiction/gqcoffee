@@ -4,6 +4,7 @@ module.exports = (grunt) ->
       compile:
         files:
           'lib/main.js': ['src/*.coffee']
+          'test/test.js': ['test/*.coffee']
     mochaTest:
       options:
         reporter: 'nyan'
