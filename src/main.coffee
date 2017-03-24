@@ -40,6 +40,7 @@ load = (o, cb) ->
   return
 
 q_load = (o) ->
+  o=o||{};
   o.query = load
   doQ(o).then (o) ->
     global.coffee = global.coffee or {}
