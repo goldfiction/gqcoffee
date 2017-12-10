@@ -19,9 +19,9 @@ load = (o, cb) ->
       cb e
     else
       async.each files, ((file, cb) ->
-        console.log file
         pathnew = file
-        filename = file.toLowerCase().replace('.coffee', '')
+        filename = file.toLowerCase().replace('.coffee', '').replace(/\\/g, '\/')
+        console.log filename
         if file.indexOf('.coffee') != -1
           try
             coffees[filename] = CoffeeScript.compile(fs.readFileSync(pathnew).toString()) or ''
