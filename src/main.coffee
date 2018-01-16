@@ -29,23 +29,26 @@ load = (o, cb) ->
           catch e
             console.log e.stack
             cb e
-        return
       ), (e) ->
         if e
           console.log e.stack
         o.result = coffees
         cb e, o
-        return
-    return
-  return
 
-q_load = (o) ->
-  o=o||{};
+doextend=(o,cb)->
+  global.coffee = global.coffee || {}
+  global.coffee = _.extend(global.coffee, o.result)
+  cb null,o
+
+q_extend=(o)->
+  o = o || {}
+  o.query = doextend
+  doQ o
+
+q_load=(o)->
+  o = o || {}
   o.query = load
-  doQ(o).then (o) ->
-    global.coffee = global.coffee or {}
-    global.coffee = _.extend(global.coffee, o.result)
-    o
+  doQ(o).then(q_extend)
 
 exports.load = load
 exports.requireFromString = require('require-from-string')

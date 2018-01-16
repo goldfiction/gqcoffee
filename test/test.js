@@ -32,7 +32,7 @@
       done();
     });
     return it('should be able to load coffees using q_load', function(done) {
-      gqcoffee.q_load(o).then(function(o) {
+      gqcoffee.q_load().then(function() {
         eval(coffee['coffee/sub/b']);
         console.log('b=' + b);
         assert(b === 456);

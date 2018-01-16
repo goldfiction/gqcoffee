@@ -25,7 +25,7 @@ describe 'default', () ->
     done()
     return
   it 'should be able to load coffees using q_load', (done) ->
-    gqcoffee.q_load(o).then((o) ->
+    gqcoffee.q_load().then(() ->
       # q_load does exactly the same thing as first test except it is q_tree compliant
       eval coffee['coffee/sub/b']
       console.log 'b=' + b
