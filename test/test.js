@@ -31,7 +31,7 @@
       assert(c.c === 789);
       done();
     });
-    return it('should be able to load coffees using q_load', function(done) {
+    it('should be able to load coffees using q_load', function(done) {
       gqcoffee.q_load().then(function() {
         eval(coffee['coffee/sub/b']);
         console.log('b=' + b);
