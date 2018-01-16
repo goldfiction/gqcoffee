@@ -1,6 +1,6 @@
 {
   "name": "gqcoffee",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description":"gqcoffee is a smart loading script for loading coffee scripts. all coffee scripts in the given folder will be parsed live and attached to global.coffee. checkout test/test.js for examples",
   "repository":"https://github.com/goldfiction/gqcoffee.git",
   "license": "MIT",
@@ -26,6 +26,7 @@
   },
   "private":false,
   "versions":{
+    "1.0.17":"fixing a bug where promise is not returned",
     "1.0.16":"fixing a bug where promise is not returned",
     "1.0.15":"refactor of main.coffee",
     "1.0.14":"refactor of main.coffee",

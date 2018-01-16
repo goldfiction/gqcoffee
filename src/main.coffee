@@ -30,6 +30,8 @@ load = (o, cb) ->
           catch e
             console.log e.stack
             cb e
+        else
+          cb null
       ), (e) ->
         if e
           console.log e.stack
