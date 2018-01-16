@@ -11,6 +11,7 @@ Q=require 'q'
 doQ=require 'gqdoq'
 
 load = (o, cb) ->
+  o=o or {}
   path2 = o.path or 'coffee'
   coffees = {}
   console.log 'loading coffee scripts from path: ' + path2
@@ -20,13 +21,12 @@ load = (o, cb) ->
       cb e
     else
       async.each files, ((file, cb) ->
-        pathnew = file
-        if file.indexOf('.coffee') != -1
+        if file.toLowerCase().indexOf('.coffee') != -1
           try
             filename = file.toLowerCase().replace(/\.coffee/g, '').replace(/\\/g, '\/')
             console.log filename
-            coffees[filename] = CoffeeScript.compile(fs.readFileSync(pathnew).toString()) or ''
-            cb()
+            coffees[filename] = CoffeeScript.compile(fs.readFileSync(file).toString()) or ''
+            cb null,o
           catch e
             console.log e.stack
             cb e
@@ -34,24 +34,16 @@ load = (o, cb) ->
         if e
           console.log e.stack
         o.result = coffees
+        global.coffee = global.coffee || {}
+        global.coffee = _.extend(global.coffee, o.result)
         cb e, o
+      null
+  null
 
-q_load1=(o)->
+q_load=(o)->
   o=o||{}
   o.query=load
   return doQ o
-
-q_load2=(o)->
-  o=o||{}
-  o.query=(o,cb)->
-    global.coffee = global.coffee || {}
-    global.coffee = _.extend(global.coffee, o.result)
-    cb()
-  return doQ o
-
-q_load=()->
-  return q_load1()
-    .then q_load2
 
 exports.load = load
 exports.requireFromString = require('require-from-string')
