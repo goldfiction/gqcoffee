@@ -1,6 +1,6 @@
 {
   "name": "gqcoffee",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description":"gqcoffee is a smart loading script for loading coffee scripts. all coffee scripts in the given folder will be parsed live and attached to global.coffee. checkout test/test.js for examples",
   "repository":"https://github.com/goldfiction/gqcoffee.git",
   "license": "MIT",
@@ -14,7 +14,9 @@
     "require-from-string":"1.2.1",
     "gqdoq":"1.0.1",
     "lodash":"4.0.0",
-    "coffee-script":"1.0.0"
+    "coffee-script":"1.0.0",
+    "q":"1.0.0",
+    "uglify-js":"2.6.1"
   },
   "extra_dependencies":{
     "grunt":"1.0.1",
@@ -26,6 +28,7 @@
   },
   "private":false,
   "versions":{
+    "1.0.19":"added minify code by default feature, to turn this off, passin option.nominify=true",
     "1.0.18":"added dependencies for coffee-script",
     "1.0.17":"fixing a bug where promise is not returned",
     "1.0.16":"fixing a bug where promise is not returned",
