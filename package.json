@@ -28,6 +28,7 @@
   },
   "private":false,
   "versions":{
+    "1.0.20":"Added load from string",
     "1.0.19":"added minify code by default feature, to turn this off, passin option.nominify=true",
     "1.0.18":"added dependencies for coffee-script",
     "1.0.17":"fixing a bug where promise is not returned",
