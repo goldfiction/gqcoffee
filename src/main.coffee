@@ -72,6 +72,21 @@ loadFromString=(o,cb)->
     o.error=e
     cb e
 
+loadFromStringSync=(o)->
+  o.script=o.script||""
+  o.option=o.option||{}
+  try
+    res = CoffeeScript.compile(o.script,(o.option)) || ''
+    if !o.option.nominify    # minify code by default. To turn this off, set option.nominify to true
+      res=UglifyJS.minify(res)
+    o.result=res
+    return o
+  catch e
+    debug e.stack
+    o.error=e
+    return o
+
+
 q_loadFromString=(o)->
   o=o||{}
   o.query=loadFromString
@@ -82,3 +97,5 @@ exports.q_load = q_load
 
 exports.loadFromString = loadFromString
 exports.q_loadFromString = q_loadFromString
+
+exports.loadFromStringSync = loadFromStringSync
