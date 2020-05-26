@@ -1,10 +1,10 @@
 {
   "name": "gqcoffee",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "description": "gqcoffee is a smart loading script for loading coffee scripts. all coffee scripts in the given folder will be parsed live and attached to global.coffee. checkout test/test.js for examples",
   "repository": "git@github.com:goldfiction/gqcoffee.git",
   "license": "MIT",
-  "main": "src/main.js",
+  "main": "lib/main.js",
   "author": {
     "name": "Grant Li"
   },
@@ -36,6 +36,7 @@
   },
   "private": false,
   "versions": {
+    "1.0.25": "fixed a misallocated lib/main.js",
     "1.0.24": "fixed windows line ending files using dos2unix",
     "1.0.23": "minor dependency fix for debug method, added devDependencies",
     "1.0.22": "Added load sync",
