@@ -2,3 +2,4 @@
 .idea/
 *.log
 arch/config.ini
+package-lock.json

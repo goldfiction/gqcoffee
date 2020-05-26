@@ -2,6 +2,7 @@
 # Created by happy on 3/23/17.
 ###
 
+debug=require('debug')('http')
 assert = require('assert')
 gqcoffee = require('../lib/main.js')
 o = {version:"1.0"}
@@ -36,7 +37,7 @@ describe 'default', () ->
   it 'should be able to render with pass-in values', (done)->
     gqcoffee.q_load({option:{o1:"ddd",nominify:false}}).then (o)->
       console.log o.result
-      done()
+    .done done
 
 
 # ---

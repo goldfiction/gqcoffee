@@ -11,7 +11,7 @@ Q=require 'q'
 doQ=require 'gqdoq'
 UglifyJS = require 'uglify-js'
 
-debug=(require 'util').debug
+debug=require("debug")("http")
 global.coffee = global.coffee || {}
 exports.requireFromString = require('require-from-string')
 
