@@ -12,7 +12,7 @@
     "async": "1.0.0",
     "coffee-script": "1.0.0",
     "coffeescript": "2.5.1",
-    "debug": "4.2.0",
+    "debug": "4.3.1",
     "fs-readdir": "0.0.3",
     "gqdoq": "1.0.1",
     "lodash": "4.17.15",
